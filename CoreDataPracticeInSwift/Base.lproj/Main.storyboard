@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CoreDataPracticeInSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CsA-Af-pGd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="44" id="pAk-WI-PS6" customClass="CustomTableViewCell" customModule="CoreDataPracticeInSwift">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pAk-WI-PS6" id="PJi-mp-AXu">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-qT-8jR">
+                                                    <rect key="frame" x="8" y="4" width="304" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="VQ0-qT-8jR" id="gfJ-Uv-Crg"/>
+                                            <segue destination="DI4-k6-IAW" kind="show" identifier="showDetailCellInfo" id="9b1-Q6-AI4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Cwi-Sc-cxt"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Mbq-8J-pLr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CsA-Af-pGd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="1GZ-6U-Twx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CsA-Af-pGd" secondAttribute="trailing" constant="-16" id="5W7-c4-at5"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CsA-Af-pGd" secondAttribute="bottom" id="h3e-ME-Y5R"/>
+                            <constraint firstItem="CsA-Af-pGd" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="m1H-09-VrV"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="tableView" destination="CsA-Af-pGd" id="JGR-wr-IF3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-691" y="162"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ivj-ec-sAa">
+            <objects>
+                <viewController id="DI4-k6-IAW" customClass="DetailViewController" customModule="CoreDataPracticeInSwift" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NLU-4D-Jn5"/>
+                        <viewControllerLayoutGuide type="bottom" id="8u2-GG-b3x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SQ1-UL-MN2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AngelPurpleRose.png" translatesAutoresizingMaskIntoConstraints="NO" id="7mI-Pe-voL">
+                                <rect key="frame" x="8" y="317" width="304" height="251"/>
+                                <color key="backgroundColor" red="1" green="0.90674558579999998" blue="0.97796178509999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNJ-BD-i3K">
+                                <rect key="frame" x="16" y="269" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vwB-fy-5o0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldItalicMT" family="Times New Roman" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCN-Ou-OFX">
+                                <rect key="frame" x="0.0" y="28" width="320" height="233"/>
+                                <color key="backgroundColor" red="1" green="0.90674558579999998" blue="0.97796178509999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="233" id="L23-RB-una"/>
+                                </constraints>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7j-ij-JJr">
+                                <rect key="frame" x="8" y="0.0" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtn:" destination="DI4-k6-IAW" eventType="touchUpInside" id="4Hl-pK-B7Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kCN-Ou-OFX" firstAttribute="top" secondItem="NLU-4D-Jn5" secondAttribute="bottom" constant="8" symbolic="YES" id="4hH-vw-7mj"/>
+                            <constraint firstItem="kCN-Ou-OFX" firstAttribute="leading" secondItem="SQ1-UL-MN2" secondAttribute="leading" id="9im-gO-T3R"/>
+                            <constraint firstAttribute="trailing" secondItem="kCN-Ou-OFX" secondAttribute="trailing" id="AAu-1G-Hef"/>
+                            <constraint firstItem="cNJ-BD-i3K" firstAttribute="centerX" secondItem="kCN-Ou-OFX" secondAttribute="centerX" id="HAf-hB-VXb"/>
+                            <constraint firstItem="cNJ-BD-i3K" firstAttribute="leading" secondItem="SQ1-UL-MN2" secondAttribute="leadingMargin" id="VrP-c6-ENQ"/>
+                            <constraint firstItem="cNJ-BD-i3K" firstAttribute="centerX" secondItem="7mI-Pe-voL" secondAttribute="centerX" id="ZZ6-ns-mYC"/>
+                            <constraint firstItem="7mI-Pe-voL" firstAttribute="top" secondItem="cNJ-BD-i3K" secondAttribute="bottom" constant="8" symbolic="YES" id="bCF-I4-33f"/>
+                            <constraint firstItem="7mI-Pe-voL" firstAttribute="bottom" secondItem="8u2-GG-b3x" secondAttribute="top" id="ed8-pH-lnU"/>
+                            <constraint firstItem="cNJ-BD-i3K" firstAttribute="top" secondItem="kCN-Ou-OFX" secondAttribute="bottom" constant="8" symbolic="YES" id="kU8-8q-u1h"/>
+                            <constraint firstItem="7mI-Pe-voL" firstAttribute="leading" secondItem="SQ1-UL-MN2" secondAttribute="leadingMargin" constant="-8" id="pnS-5X-niX"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="iconView" destination="7mI-Pe-voL" id="Xhn-hv-xBq"/>
+                        <outlet property="name" destination="cNJ-BD-i3K" id="5HA-DM-OzS"/>
+                        <outlet property="urlWebView" destination="kCN-Ou-OFX" id="tC5-FX-OWG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndE-ZV-0Mz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-310" y="117"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AngelPurpleRose.png" width="300" height="300"/>
+    </resources>
+</document>
